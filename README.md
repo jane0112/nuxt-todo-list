@@ -7,9 +7,9 @@
 * Choose Language.
 * Store all tasks in localStorage.
 
-## Technology
-* Nuxt version: 2.15.8
-* Vue version: 2.6.14
+## Build with
+* Nuxt.js version: 2.15.8
+* Vue.js version: 2.6.14
 * Vuex
 * Scss
 * i18n (@nuxtjs/i18n)version: 7.2.2
