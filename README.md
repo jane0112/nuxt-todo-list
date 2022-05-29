@@ -1,4 +1,4 @@
-# todo-list
+# Todo list
 
 ## Features
 * Add new task.
@@ -58,4 +58,3 @@ This directory contains your Vuex store files. Creating a file in this directory
 
 ### `utils`
 This directory contains small snippets that can use throughout the application. 
-# nuxt-todo-list
