@@ -1,0 +1,13 @@
+@mixin img-size($width, $height) {
+  width: $width;
+  height: $height;
+  vertical-align: middle;
+  display: block;
+}
+
+@mixin reset-btn () {
+  cursor: pointer;
+  background: none;
+  outline: none;
+  border: none;
+}
