@@ -1,12 +1,12 @@
 <template>
-  <div class="header">
-    <div class="header__left">
+  <div class="header d-flex">
+    <div class="header__left d-flex">
       <button class="header__btn">
         <img :src="menuImg" alt="menuBars" class="menu-bars" />
       </button>
       <div class="h-title">HandsUp</div>
     </div>
-    <div class="header__right">
+    <div class="header__right d-flex">
       <select v-model="lang" class="lang-select" @change="setLang(lang)">
         <option v-for="(item, idx) in languages" :key="idx" :value="item.value">
           {{ item.lang }}
@@ -43,7 +43,7 @@ export default {
       ],
     }
   },
-  mounted () {
+  mounted() {
     const lang = storage.locale || 'zh'
     this.setLang(lang)
   },
@@ -62,13 +62,19 @@ export default {
   width: 100%;
   height: 60px;
   padding: 20px 0;
-  display: flex;
   box-sizing: border-box;
-  justify-content: space-between;
   align-items: center;
-  &__left,
+
+  &__left {
+    flex-basis: 200px;
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
   &__right {
-    display: flex;
+    flex-basis: 150px;
+    flex-grow: 0;
+    flex-shrink: 0;
+
   }
   &__btn {
     @include reset-btn();

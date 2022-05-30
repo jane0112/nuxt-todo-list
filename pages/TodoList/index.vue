@@ -12,7 +12,7 @@
           v-model="content"
           class="input"
           type="text"
-          name="addTodo"
+          name="task"
           :placeholder="$t('__pleaseEnterTask')"
           @keypress.enter="addTask"
         />
@@ -45,10 +45,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['tasks']),
-    todos() {
-      return this.tasks.map((item) => item.content)
-    },
+    ...mapState(['tasks'])
   },
   mounted() {
     this.$store.dispatch('getTasks', stroage.todoList || [])
@@ -124,5 +121,11 @@ export default {
   flex-shrink: 0;
   flex-grow: 0;
   flex-basis: 50px;
+}
+
+@media screen and (max-width: 768px){
+  .todo {
+    max-width: 80%;
+  }
 }
 </style>

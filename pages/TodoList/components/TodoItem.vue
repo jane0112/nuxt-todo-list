@@ -25,8 +25,6 @@
 
 <script>
 import trash from '../../../assets/img/trash.svg'
-import checkbox from '../../../assets/img/checkbox.svg'
-import check from '../../../assets/img/check.svg'
 
 export default {
   name: 'TodoItem',
@@ -39,9 +37,7 @@ export default {
   data() {
     return {
       trashImg: trash,
-      isDone: false,
-      checkboxImg: checkbox,
-      checkboxCheckedImg: check,
+      isDone: false
     }
   },
   mounted () {
@@ -64,6 +60,7 @@ export default {
 }
 .m-img {
   @include img-size(20px, 20px);
+  margin: auto;
 }
 .m-list-item {
   input,
@@ -76,6 +73,8 @@ export default {
   cursor: pointer;
   line-height: 1.8;
   margin-left: 10px;
+  overflow: auto;
+
   &.done {
     color: $primary;
   }
