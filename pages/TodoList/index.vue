@@ -126,6 +126,9 @@ export default {
 @media screen and (max-width: 768px){
   .todo {
     max-width: 80%;
+    .t-body {
+      padding: 10px;
+    }
   }
 }
 </style>
