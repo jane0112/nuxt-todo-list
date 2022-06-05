@@ -1,16 +1,25 @@
 <template>
-  <div v-if="isLoading" class="mask">
+  <div v-if="loading" class="mask" >
     <div class="spinner"></div>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
 export default {
   name: 'LoaderSpinner',
-  computed: {
-    ...mapState(['isLoading']),
+  data () {
+    return {
+      loading: false
+    }
   },
+  methods: {
+    start() {
+      this.loading = true
+    },
+    finish() {
+      this.loading = false
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

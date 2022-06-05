@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import trash from '../../../assets/img/trash.svg'
+import trash from '~/assets/img/trash.svg'
 
 export default {
   name: 'TodoItem',

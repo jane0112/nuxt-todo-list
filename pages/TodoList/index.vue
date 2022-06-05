@@ -30,13 +30,14 @@
 import { mapState } from 'vuex'
 import add from '../../assets/img/add.svg'
 import stroage from '../../utils/storageHelper'
-import TodoItem from './components/TodoItem.vue'
+import TodoItem from '~/components/TodoItem/index.vue'
 
 export default {
   name: 'TodoList',
   components: {
     TodoItem,
   },
+  layout: 'MainLayout',
   data() {
     return {
       content: '',

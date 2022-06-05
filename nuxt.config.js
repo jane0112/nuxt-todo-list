@@ -53,4 +53,5 @@ export default {
       { code: 'zh', iso: 'zh-TW', file: 'zh.json' },
     ],
   },
+  loading: '~/components/LoaderSpinner/index.vue'
 }

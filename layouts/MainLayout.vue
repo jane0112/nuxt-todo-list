@@ -2,20 +2,17 @@
 <div class="main-body">
   <layout-header></layout-header>
   <div class="m-content">
-    <slot></slot>
+    <nuxt></nuxt>
   </div>
 </div>
 </template>
 
 <script>
-import LayoutHeader from '../LayoutHeader/index.vue'
+import LayoutHeader from '~/components/LayoutHeader/index.vue'
 export default {
-  name: 'GlobalLayout',
+  name: 'MainLayout',
   components: {
     LayoutHeader
   }
 }
 </script>
-<style lang="scss" scoped>
-
-</style>

@@ -5,27 +5,26 @@ import * as types from './mutationTypes'
 
 const state = () => ({
   tasks: [],
-  isLoading: false,
   lang: 'zh',
 })
 
 const actions = {
   async addTask({ commit, state }, tasks) {
-    commit(types.SET_IS_LOADING, true)
+    window.$nuxt.$loading.start()
     const res = await todoService.addTask(tasks)
     if (res === 'success') {
       commit(types.ADD_TASK, tasks)
-      commit(types.SET_IS_LOADING, false)
+      window.$nuxt.$loading.finish()
     } else {
       alert('Error !!!')
     }
   },
   async removeTask({ commit, state }, idx) {
-    commit(types.SET_IS_LOADING, true)
+    window.$nuxt.$loading.start()
     const res = await todoService.removeTask()
     if (res === 'success') {
       commit(types.REMOVE_TASK, idx)
-      commit(types.SET_IS_LOADING, false)
+      window.$nuxt.$loading.finish()
     } else {
       alert('Error !!!')
     }
@@ -35,9 +34,6 @@ const actions = {
   },
   getTasks({ commit, state }, tasks) {
     commit(types.SET_TASKS, tasks)
-  },
-  setIsLoading({ commit, state }, isLoading) {
-    commit(types.SET_IS_LOADING, isLoading)
   },
   setLang({ commit, state }, lang) {
     commit(types.SET_LANG, lang)
@@ -60,9 +56,6 @@ const mutations = {
   [types.TOGGLE_TASK](state, task) {
     task.done = !task.done
     storage.todoList = state.tasks
-  },
-  [types.SET_IS_LOADING](state, isLoading) {
-    state.isLoading = isLoading
   },
   [types.SET_TASKS](state, tasks) {
     state.tasks = tasks || []
