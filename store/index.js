@@ -11,23 +11,33 @@ const state = () => ({
 const actions = {
   async addTask({ commit, state }, tasks) {
     window.$nuxt.$loading.start()
-    const res = await todoService.addTask(tasks)
-    if (res === 'success') {
-      commit(types.ADD_TASK, tasks)
-      window.$nuxt.$loading.finish()
-    } else {
-      alert('Error !!!')
+    try {
+      const res = await todoService.addTask(tasks)
+      if (res === 'success') {
+        commit(types.ADD_TASK, tasks)
+      } else {
+        alert(this.$i18n.t(`__errorsOccur`))
+      }
     }
+    catch{
+      alert(this.$i18n.t(`__pleaseEnterTask`)/*  */)
+    }
+    window.$nuxt.$loading.finish()
   },
   async removeTask({ commit, state }, idx) {
     window.$nuxt.$loading.start()
-    const res = await todoService.removeTask()
-    if (res === 'success') {
-      commit(types.REMOVE_TASK, idx)
-      window.$nuxt.$loading.finish()
-    } else {
-      alert('Error !!!')
+    try {
+      const res = await todoService.removeTask(idx)
+      if (res === 'success') {
+        commit(types.REMOVE_TASK, idx)
+      } else {
+        alert(this.$i18n.t(`__errorsOccur`))
+      }
     }
+    catch {
+      alert(this.$i18n.t(`__errorsOccur`))
+    }
+    window.$nuxt.$loading.finish()
   },
   toggleTask({ commit, state }, data) {
     commit(types.TOGGLE_TASK, data)

@@ -1,15 +1,23 @@
-const addTask = () => {
+const addTask = (param) => {
   return new Promise(function (resolve, reject) {
     setTimeout(function () {
-      resolve('success')
+      if (param) {
+        resolve('success')
+      } else {
+        reject(new Error('error'))
+      }
     }, 1000)
   })
 }
 
-const removeTask = () => {
+const removeTask = (param) => {
   return new Promise(function (resolve, reject) {
     setTimeout(function () {
-      resolve('success')
+      if (param) {
+        resolve('success')
+      } else {
+        reject(new Error('error'))
+      }
     }, 1000)
   })
 }

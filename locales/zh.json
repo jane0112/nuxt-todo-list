@@ -1,4 +1,5 @@
 {
   "__todoList": "待辦事項",
-  "__pleaseEnterTask": "請輸入要做的事情"
+  "__pleaseEnterTask": "請輸入要做的事情",
+  "__errorsOccur": "發生問題，請稍後再試"
 }

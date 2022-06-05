@@ -53,9 +53,6 @@ export default {
   },
   methods: {
     addTask() {
-      if (this.content.trim() === '') {
-        return
-      }
       this.$store.dispatch('addTask', this.content)
       this.content = ''
     }
